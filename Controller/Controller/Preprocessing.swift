@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import CoreImage
-
+import Vision
 
 class Preprocessing: UIViewController{
     @IBOutlet weak var LightOff: UIImageView!
@@ -19,7 +19,8 @@ class Preprocessing: UIViewController{
     @IBOutlet weak var Runtime: UILabel!
     
     let imageSize:CGFloat = 300;
-    
+    var screenCenters = [CGPoint]()
+    let screenSize = 10.0;//pixel
     
     func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
         
@@ -53,43 +54,69 @@ class Preprocessing: UIViewController{
         let filter = CIFilter(name: "CISubtractBlendMode")
         filter?.setValue(gray_light_off, forKey: kCIInputImageKey)
         filter?.setValue(gray_light_on, forKey: kCIInputBackgroundImageKey)
-        let output = UIImage(ciImage: (filter?.outputImage)!)
         
-        Result?.image = output
-        
+        let ciImgae = filter?.outputImage
+        let context = CIContext.init()
+        let ref = context.createCGImage(ciImgae!, from: (ciImgae?.extent)!)
+        Result?.image = UIImage(cgImage: ref!)
     }
     
-    func performRectangleDetection(image: UIKit.CIImage) -> UIKit.CIImage? {
-        var resultImage: UIKit.CIImage?
-        let detector:CIDetector = CIDetector(ofType: CIDetectorTypeRectangle, context: nil, options: [CIDetectorAccuracy : CIDetectorAccuracyHigh])!
-        // Get the detections
-        let features = detector.features(in: image)
-        for feature in features as! [CIRectangleFeature] {
-            resultImage = self.drawHighlightOverlayForPoints(
-                image: image,
-                topLeft: feature.topLeft,
-                topRight: feature.topRight,
-                bottomLeft: feature.bottomLeft,
-                bottomRight: feature.bottomRight)
+    func performRectangleDetection() {
+        guard let image = Result.image else { print("No Image"); return }
+        
+        var count = 0//record the number of rectangles
+
+        let request = VNDetectRectanglesRequest { (req,err)
+            in
+            
+            if let err = err{
+                print("Failed to detect faces:",err)
+                return
+            }
+            
+            req.results?.forEach({ (res) in
+                print("res",res)
+                
+                count += 1
+                guard let faceObservation = res as? VNRectangleObservation else { print("VNRectangleObservation failed"); return }
+                
+                
+            print(faceObservation.topLeft,faceObservation.topRight,faceObservation.bottomLeft,faceObservation.bottomRight)
+                let width = self.Result.frame.width * faceObservation.boundingBox.width
+                let height = self.Result.frame.height * faceObservation.boundingBox.height
+                
+                let x = self.Result.frame.width * faceObservation.boundingBox.origin.x
+                let y = self.Result.frame.height * (1 -  faceObservation.boundingBox.origin.y) - height
+                
+                let redView = UIView()
+                redView.backgroundColor = .red
+                redView.alpha = 0.4
+                redView.frame = CGRect(x: x, y: y, width: width, height: height)
+                self.Result.addSubview(redView)
+                
+                print(faceObservation.boundingBox)
+                
+            })
         }
-        return resultImage
-    }
-    
-    func drawHighlightOverlayForPoints(image: UIKit.CIImage, topLeft: CGPoint, topRight: CGPoint,
-                                       bottomLeft: CGPoint, bottomRight: CGPoint) -> UIKit.CIImage {
+  
+        request.maximumObservations = 0
+        //        request.minimumConfidence = 0.5
+        //        request.minimumSize = 0.5
+
+        guard let cgImage = image.cgImage else { print("CGImage faile"); return }
+        let handler = VNImageRequestHandler(cgImage: cgImage, options: [:])
+        do{
+            try handler.perform([request])
+        } catch let reqErr{
+            print("Failed to perform request:",reqErr)
+        }
         
-        var overlay = UIKit.CIImage(color: CIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.45))
-        overlay = overlay.cropped(to: image.extent)
-        overlay = overlay.applyingFilter("CIPerspectiveTransformWithExtent",
-                                                parameters: [
-                                                    "inputExtent": CIVector(cgRect: image.extent),
-                                                    "inputTopLeft": CIVector(cgPoint: topLeft),
-                                                    "inputTopRight": CIVector(cgPoint: topRight),
-                                                    "inputBottomLeft": CIVector(cgPoint: bottomLeft),
-                                                    "inputBottomRight": CIVector(cgPoint: bottomRight)
-            ])
-        return overlay.composited(over: image)
+        print(count)
     }
+
+    
+    
+    
     
     @IBAction func Process(_ sender: UIButton) {
         let start = CACurrentMediaTime()
@@ -102,16 +129,11 @@ class Preprocessing: UIViewController{
         BackgroundSubtraction()
         
         //find screens in the background subtraction image
-        var rectDetect = CIImage(image: Result.image!)
-        if(rectDetect == nil){print("nil\n")}
-        else {print("oK\n")}
-        var temp = performRectangleDetection(image: rectDetect!)
-        if(temp == nil){print("nil\n")}
-        else {print("oK\n")}
-        //Result.image = UIImage(ciImage: temp!)
-
+        performRectangleDetection()
+        
         let end = CACurrentMediaTime()
-        self.Runtime.text = "runtime=" + String(end-start)
+        Runtime.text = String(end-start)
+        
     }
   
 }
