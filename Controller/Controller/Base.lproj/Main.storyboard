@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Preprocessing-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Controller" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="Preprocessing" customModule="Controller" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -30,9 +30,9 @@
                                 <rect key="frame" x="42" y="543" width="291" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.79953204314720816" green="0.79953204314720816" blue="0.79953204314720816" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="background subtraction"/>
+                                <state key="normal" title="Run"/>
                                 <connections>
-                                    <action selector="Convert:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qDw-Fv-hgT"/>
+                                    <action selector="Process:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QxK-gL-d41"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="light_off.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="TSQ-31-1QQ">
@@ -51,10 +51,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="Gray" destination="fxa-wJ-VTF" id="fPs-1i-rej"/>
-                        <outlet property="Origin" destination="TSQ-31-1QQ" id="Eg5-c5-7NQ"/>
-                        <outlet property="RunTime" destination="kwD-VD-T8t" id="YNz-FP-a7I"/>
-                        <outlet property="lightOn" destination="a5T-5R-41w" id="mCl-Ge-USj"/>
+                        <outlet property="LightOff" destination="TSQ-31-1QQ" id="QEI-sj-5rJ"/>
+                        <outlet property="LightOn" destination="a5T-5R-41w" id="eai-mc-dt6"/>
+                        <outlet property="Result" destination="fxa-wJ-VTF" id="rRt-1H-AA2"/>
+                        <outlet property="Runtime" destination="kwD-VD-T8t" id="FHw-u9-mh3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -63,7 +63,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="light_off.jpg" width="4096" height="2304"/>
-        <image name="light_on.jpg" width="4096" height="2304"/>
+        <image name="light_off.jpg" width="4032" height="3024"/>
+        <image name="light_on.jpg" width="4032" height="3024"/>
     </resources>
 </document>

@@ -15,6 +15,7 @@
 		FE8A59241FF224BA00250682 /* Controller.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE8A59221FF224BA00250682 /* Controller.xcdatamodeld */; };
 		FE8A59261FF224BA00250682 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE8A59251FF224BA00250682 /* Assets.xcassets */; };
 		FE8A59291FF224BA00250682 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE8A59271FF224BA00250682 /* LaunchScreen.storyboard */; };
+		FE8C675720070ECE002F4E0C /* Preprocessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8C675620070ECE002F4E0C /* Preprocessing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		FE8A59251FF224BA00250682 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE8A59281FF224BA00250682 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE8A592A1FF224BA00250682 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE8C675620070ECE002F4E0C /* Preprocessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preprocessing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				FE8A591B1FF224BA00250682 /* AppDelegate.swift */,
 				FE8A591D1FF224BA00250682 /* ViewController.swift */,
+				FE8C675620070ECE002F4E0C /* Preprocessing.swift */,
 				FE8A59251FF224BA00250682 /* Assets.xcassets */,
 				FE8A591F1FF224BA00250682 /* Main.storyboard */,
 				FE5E4AFD1FFC800900EE1E14 /* light_off.jpg */,
@@ -149,6 +152,7 @@
 			files = (
 				FE8A591E1FF224BA00250682 /* ViewController.swift in Sources */,
 				FE8A59241FF224BA00250682 /* Controller.xcdatamodeld in Sources */,
+				FE8C675720070ECE002F4E0C /* Preprocessing.swift in Sources */,
 				FE8A591C1FF224BA00250682 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,10 +291,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CR647LJRY7;
+				DEVELOPMENT_TEAM = DE2J4NN5W3;
 				INFOPLIST_FILE = Controller/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = grooming;
+				PRODUCT_BUNDLE_IDENTIFIER = co.Howard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -302,10 +306,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CR647LJRY7;
+				DEVELOPMENT_TEAM = DE2J4NN5W3;
 				INFOPLIST_FILE = Controller/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = grooming;
+				PRODUCT_BUNDLE_IDENTIFIER = co.Howard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
