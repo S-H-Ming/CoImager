@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FE5E4AFE1FFC800900EE1E14 /* light_on.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE5E4AFC1FFC800800EE1E14 /* light_on.jpg */; };
 		FE5E4AFF1FFC800900EE1E14 /* light_off.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE5E4AFD1FFC800900EE1E14 /* light_off.jpg */; };
+		FE637DCF200F650800A98499 /* Connecting.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE637DCE200F650800A98499 /* Connecting.swift */; };
 		FE8A591C1FF224BA00250682 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8A591B1FF224BA00250682 /* AppDelegate.swift */; };
 		FE8A591E1FF224BA00250682 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8A591D1FF224BA00250682 /* ViewController.swift */; };
 		FE8A59211FF224BA00250682 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE8A591F1FF224BA00250682 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		FE5E4AFC1FFC800800EE1E14 /* light_on.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = light_on.jpg; sourceTree = "<group>"; };
 		FE5E4AFD1FFC800900EE1E14 /* light_off.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = light_off.jpg; sourceTree = "<group>"; };
+		FE637DCE200F650800A98499 /* Connecting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connecting.swift; sourceTree = "<group>"; };
 		FE8A59181FF224BA00250682 /* Controller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Controller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE8A591B1FF224BA00250682 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE8A591D1FF224BA00250682 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				FE8A591B1FF224BA00250682 /* AppDelegate.swift */,
 				FE8A591D1FF224BA00250682 /* ViewController.swift */,
 				FE8C675620070ECE002F4E0C /* Preprocessing.swift */,
+				FE637DCE200F650800A98499 /* Connecting.swift */,
 				FE8A59251FF224BA00250682 /* Assets.xcassets */,
 				FE8A591F1FF224BA00250682 /* Main.storyboard */,
 				FE5E4AFD1FFC800900EE1E14 /* light_off.jpg */,
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE8A591E1FF224BA00250682 /* ViewController.swift in Sources */,
+				FE637DCF200F650800A98499 /* Connecting.swift in Sources */,
 				FE8A59241FF224BA00250682 /* Controller.xcdatamodeld in Sources */,
 				FE8C675720070ECE002F4E0C /* Preprocessing.swift in Sources */,
 				FE8A591C1FF224BA00250682 /* AppDelegate.swift in Sources */,
@@ -291,10 +295,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DE2J4NN5W3;
+				DEVELOPMENT_TEAM = LK7M67SSKJ;
 				INFOPLIST_FILE = Controller/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.Howard;
+				PRODUCT_BUNDLE_IDENTIFIER = co.Cewd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -306,10 +310,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DE2J4NN5W3;
+				DEVELOPMENT_TEAM = LK7M67SSKJ;
 				INFOPLIST_FILE = Controller/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.Howard;
+				PRODUCT_BUNDLE_IDENTIFIER = co.Cewd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
