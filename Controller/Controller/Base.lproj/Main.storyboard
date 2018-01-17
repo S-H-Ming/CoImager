@@ -30,7 +30,7 @@
                                 <rect key="frame" x="42" y="543" width="291" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.79953204314720816" green="0.79953204314720816" blue="0.79953204314720816" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="background subtraction"/>
+                                <state key="normal" title="Run"/>
                                 <connections>
                                     <action selector="Process:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QxK-gL-d41"/>
                                 </connections>
@@ -63,7 +63,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="light_off.jpg" width="4096" height="2304"/>
-        <image name="light_on.jpg" width="4096" height="2304"/>
+        <image name="light_off.jpg" width="4032" height="3024"/>
+        <image name="light_on.jpg" width="4032" height="3024"/>
     </resources>
 </document>
